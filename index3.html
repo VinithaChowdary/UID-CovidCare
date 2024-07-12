@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration Form</title>
+  <link rel="stylesheet" href="style3.css">
+</head>
+<body>
+
+<div class="wrapper">
+    <div class="title">
+      Vaccination Booking
+    </div>
+    <div class="form">
+      <form id="registrationForm" onsubmit="submitForm(event)">
+        <div class="inputfield">
+          <label>Your Name</label>
+          <input id="nameInput" type="text" class="input" required>
+        </div>  
+        <div class="inputfield">
+          <label>Aadhar Number</label>
+          <input id="aadharInput" type="text" class="input" required>
+        </div>  
+        <div class="inputfield">
+          <label>Age</label>
+          <input id="ageInput" type="text" class="input" required>
+        </div>  
+        <div class="inputfield">
+          <label>Vaccination</label>
+          <div class="custom_select">
+            <select id="vaccinationSelect" required>
+              <option value="">Select</option>
+              <option value="Covaccine">Covaccine</option>
+              <option value="Covishield">Covishield</option>
+            </select>
+          </div>
+        </div> 
+        <div class="inputfield">
+          <label>Gender</label>
+          <div class="custom_select">
+            <select id="genderSelect" required>
+              <option value="">Select</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+            </select>
+          </div>
+        </div> 
+        <div class="inputfield">
+          <label>Email</label>
+          <input id="emailInput" type="email" class="input" required>
+        </div> 
+        <div class="inputfield">
+          <label>Date</label>
+          <input id="dateInput" type="date" class="input" required>
+        </div> 
+        <div class="inputfield">
+          <label>Time</label>
+          <input id="timeInput" type="time" class="input" required>
+        </div> 
+        <div class="inputfield">
+          <label>Available Hospitals</label>
+          <div class="custom_select">
+            <select id="hospitalSelect" required>
+              <option value="">Select</option>
+              <option value="GMC-Martahalli">GMC-Martahalli</option>
+              <option value="Indira-WhiteField">Indira-WhiteField</option>
+              <option value="Manipal-Sarjapur">Manipal-Sarjapur</option>
+            </select>
+          </div>
+        </div>
+        <div class="inputfield">
+          <label>Phone Number</label>
+          <input id="phoneInput" type="tel" class="input" required>
+        </div> 
+        <div class="inputfield">
+          <label>Address</label>
+          <textarea id="addressInput" class="textarea" required></textarea>
+        </div> 
+        <div class="inputfield">
+          <label>Postal Code</label>
+          <input id="postalCodeInput"type="text" class="input" required>
+</div>
+<div class="inputfield terms">
+<label class="check">
+<input id="termsCheckbox" type="checkbox" required>
+<span class="checkmark"></span>
+</label>
+<p>Agreed to terms and conditions</p>
+</div>
+<div class="inputfield">
+<input type="submit" value="Schedule vaccination" class="btn">
+</div>
+</form>
+</div>
+
+</div>	
+<script>
+  function submitForm(event) {
+    event.preventDefault();
+
+    // Retrieve form field values
+    const name = document.getElementById('nameInput').value;
+    const aadhar = document.getElementById('aadharInput').value;
+    const age = document.getElementById('ageInput').value;
+    const vaccination = document.getElementById('vaccinationSelect').value;
+    const gender = document.getElementById('genderSelect').value;
+    const email = document.getElementById('emailInput').value;
+    const date = document.getElementById('dateInput').value;
+    const time = document.getElementById('timeInput').value;
+    const hospital = document.getElementById('hospitalSelect').value;
+    const phone = document.getElementById('phoneInput').value;
+    const address = document.getElementById('addressInput').value;
+    const postalCode = document.getElementById('postalCodeInput').value;
+    const termsChecked = document.getElementById('termsCheckbox').checked;
+
+    // Check if any field is empty
+    if (
+      name === '' ||
+      aadhar === '' ||
+      age === '' ||
+      vaccination === '' ||
+      gender === '' ||
+      email === '' ||
+      date === '' ||
+      time === '' ||
+      hospital === '' ||
+      phone === '' ||
+      address === '' ||
+      postalCode === '' ||
+      !termsChecked
+    ) {
+      alert('Please fill in all the required fields.');
+    } else {
+      alert('Your form has been submitted.');
+    }
+  }
+</script>
+</body>
+</html>

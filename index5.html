@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dr.Covid Self Diagnosis</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: hwb(208 9% 37%);;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    form {
+      max-width: 700px;
+      margin: 0 auto;
+      background-color:white;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="date"],
+    select,
+    input[type="email"],
+    input[type="tel"],
+    textarea {
+      width: 100%;
+      padding: 10px;
+      border-radius: 3px;
+      border: 1px solid hwb(208 9% 37%);;
+    }
+
+    input[type="submit"] {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      background-color:hwb(208 9% 37%);;
+      color:black;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+      background-color:hwb(208 9% 37%);;
+    }
+
+    .checkbox-group {
+      margin-bottom: 10px;
+    }
+
+    .checkbox-group label {
+      display: inline-block;
+      margin-right: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1 style="color: white;">SELF DIAGNOSIS</h1>
+  <form id="registration-form">
+    <label for="firstname">First Name</label>
+    <input type="text" id="firstname" name="firstname" required>
+
+    <label for="dob">Date of Birth</label>
+    <input type="date" id="dob" name="dob" required>
+
+    <label>Gender</label>
+    <div class="radio-group">
+      <label for="male">
+        <input type="radio" id="male" name="gender" value="male" required> Male
+      </label>
+      <label for="female">
+        <input type="radio" id="female" name="gender" value="female" required> Female
+      </label>
+      <label for="other">
+        <input type="radio" id="other" name="gender" value="other" required> Other
+      </label>
+    </div>
+
+    <label for="phone">Phone Number</label>
+    <input type="tel" id="phone" name="phone" required>
+    <label for="address">Address</label>
+    <input type="text" id="address" name="address" required>
+
+    <label for="city">City</label>
+    <input type="text" id="city" name="city" required>
+
+    <label for="state">State / Province</label>
+    <input type="text" id="state" name="state" required>
+
+    <label for="symptoms">In the past 14 days have any?</label>
+    <div class="checkbox-group">
+      <label for="fever">
+        <input type="checkbox" id="fever" name="symptoms" value="fever"> Fever
+      </label>
+      <label for="chills">
+        <input type="checkbox" id="chills" name="symptoms" value="chills"> Chills
+      </label>
+      <label for="cough">
+        <input type="checkbox" id="cough" name="symptoms" value="cough"> Cough
+      </label>
+      <label for="shortness-of-breath">
+        <input type="checkbox" id="shortness-of-breath" name="symptoms" value="shortness-of-breath"> Shortness of Breath OR Difficulty Breathing
+      </label>
+      <label for="fatigue">
+        <input type="checkbox" id="fatigue" name="symptoms" value="fatigue"> Fatigue
+      </label>
+      <label for="body-aches">
+        <input type="checkbox" id="body-aches" name="symptoms" value="body-aches"> Muscle OR Body Aches
+      </label>
+      <label for="headache">
+        <input type="checkbox" id="headache" name="symptoms" value="headache"> Headache
+      </label>
+      <label for="loss-of-taste-smell">
+        <input type="checkbox" id="loss-of-taste-smell" name="symptoms" value="loss-of-taste-smell"> New Loss of Taste OR Smell
+      </label>
+      <label for="sore-throat">
+        <input type="checkbox" id="sore-throat" name="symptoms" value="sore-throat"> Sore Throat
+      </label>
+      <label for="congestion">
+        <input type="checkbox" id="congestion" name="symptoms" value="congestion"> Congestion OR Runny Nose
+      </label>
+      <label for="nausea-vomiting">
+        <input type="checkbox" id="nausea-vomiting" name="symptoms" value="nausea-vomiting"> Nausea OR Vomiting
+      </label>
+      <label for="diarrhea">
+        <input type="checkbox" id="diarrhea" name="symptoms" value="diarrhea"> Diarrhea
+      </label>
+      <label for="no-symptoms">
+        <input type="checkbox" id="no-symptoms" name="symptoms" value="no-symptoms"> NO SYMPTOMS
+      </label>
+    </div>
+
+    <label for="chronic-conditions">PAST MEDICAL HISTORY Do you have any other chronic medical conditions (in addition to those above)?</label>
+    <div class="radio-group">
+      <label for="chronic-yes">
+        <input type="radio" id="chronic-yes" name="chronic-conditions" value="yes" required> Yes
+      </label>
+      <label for="chronic-no">
+        <input type="radio" id="chronic-no" name="chronic-conditions" value="no" required> No
+      </label>
+    </div>
+
+    <label for="other-conditions">Please list any chronic medical conditions you have</label>
+    <textarea id="other-conditions" name="other-conditions"></textarea>
+
+    <label for="allergies">Do you have any medication allergies?</label>
+    <div class="radio-group">
+      <label for="allergies-yes">
+        <input type="radio" id="allergies-yes" name="allergies" value="yes" required> Yes
+      </label>
+      <label for="allergies-no">
+        <input type="radio" id="allergies-no" name="allergies" value="no" required> No
+      </label>
+    </div>
+
+    <label for="drug-allergies">Please list any drug allergies you may have</label>
+    <textarea id="drug-allergies" name="drug-allergies"></textarea>
+
+    <label for="medications">Are you currently taking any medication?</label>
+    <div class="radio-group">
+      <label for="medications-yes">
+        <input type="radio" id="medications-yes" name="medications" value="yes" required> Yes
+      </label>
+      <label for="medications-no">
+        <input type="radio" id="medications-no" name="medications" value="no" required> No
+      </label>
+    </div>
+
+    <label for="current-medications">Please list any prescription or OTC medications or supplements you take regularly</label>
+    <textarea id="current-medications" name="current-medications"></textarea>
+   
+
+    <label for="close-contact">In the past 14 days, have you had close contact with anyone with the following?</label>
+    <div class="checkbox-group">
+      <label for="covid-positive-symptoms">
+        <input type="checkbox" id="covid-positive-symptoms" name="close-contact" value="covid-positive-symptoms"> Person with COVID-19 who has symptoms that had a positive test OR was diagnosis based on clinical symptoms
+      </label>
+      <label for="covid-positive-no-symptoms">
+        <input type="checkbox" id="covid-positive-no-symptoms" name="close-contact" value="covid-positive-no-symptoms"> Person who has tested positive for COVID-19 but has not had any symptoms
+      </label>
+    </div>
+  
+    <input type="submit" style="color: white;font-size: large;" value="Submit">
+  </form>
+  <p id="demo" style="color: white;size: 500px; border-style: dashed;"></p>
+
+  
+</body>
+</html>
